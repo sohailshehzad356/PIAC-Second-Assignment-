@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1> - Develop a program that determines the day of the week. Ask the user for a number (1-7) and use nested if statements to print the corresponding day's name.
+    </h1>
+    <h1>This program took 40 minutes to complete</h1>
+    <script>
+
+
+const dayNumber = parseInt(prompt("Pick a number from 1 to 7: "));
+
+if (isNaN(dayNumber) || dayNumber < 1 || dayNumber > 7) {
+  console.error("Oops, that's not a valid number! Try again (1-7).");
+
+}
+
+
+if (dayNumber === 1) {
+  console.log("Monday!");
+} else if (dayNumber === 2) {
+  console.log("Tuesday");
+} else if (dayNumber === 3) {
+  console.log("Wednesday");
+} else if (dayNumber === 4) {
+  console.log("Thursday");
+} else if (dayNumber === 5) {
+  console.log("Friday");
+} else if (dayNumber === 6) {
+  console.log("Saturday");
+} else {
+  console.log("Sunday");
+}
+
+
+
+    </script>
+</body>
+</html>

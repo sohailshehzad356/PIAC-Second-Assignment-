@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+    .converter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+input, select {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #063700;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+#result {
+  font-weight: bold;
+}
+
+</style>
+</head>
+<body>
+  <h1>This program took 2 hours to build</h1>
+ <h2 style="text-align: center;">Temperature Converter</h2>
+  <div class="converter">
+    <input type="number" id="temperature" placeholder="Enter temperature" required>
+    <select id="unit">
+      <option value="C">Celsius</option>
+      <option value="F">Fahrenheit</option>
+    </select>
+    <button onclick="convertTemp(document.getElementById('temperature').value, document.getElementById('unit').value)">Convert</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+function convertTemp(temperature, unit) {
+  // Check for valid input and unit
+  if (isNaN(temperature) || !["C", "F"].includes(unit)) {
+    console.error("Invalid temperature or unit!");
+    return;
+  }
+
+  // Convert based on unit
+  let convertedTemp;
+  if (unit === "C") {
+    convertedTemp = (temperature * 9 / 5) + 32;
+  } else { // Unit is F
+    convertedTemp = (temperature - 32) * 5 / 9;
+  }
+
+  // Determine the final unit based on the original unit
+  const finalUnit = unit === "C" ? "F" : "C";
+
+  // Update result element with converted temperature and unit
+  document.getElementById('result').textContent = `${temperature}${unit} is ${convertedTemp.toFixed(2)}${finalUnit}`;
+}
+
+
+  </script>
+</body>
+</html>

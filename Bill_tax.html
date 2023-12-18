@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit Bill Calculator</title>
+</head>
+<body>
+    <h1>This program take 1 hour to build</h1>
+  <h1>Unit Bill Calculator</h1>
+  <p>Enter the number of units you used:</p>
+  <input type="number" id="unitsConsumed">
+  <button onclick="calculateBill()">Calculate Bill</button>
+  <p id="billAmount">Your bill amount will appear here.</p>
+  <script>
+    function calculateBill() {
+      // Base price per unit
+      const pricePerUnit = 1;
+
+      // Tax slabs with thresholds and rates
+      const taxSlabs = [
+        { threshold: 100, taxRate: 0.1 },
+        { threshold: 200, taxRate: 0.15 },
+        { threshold: 300, taxRate: 0.2 },
+        { threshold: 400, taxRate: 0.225 },
+        { threshold: 500, taxRate: 0.25 },
+      ];
+
+      // Get units consumed from input
+      const unitsConsumed = parseInt(document.getElementById("unitsConsumed").value);
+
+      // Validate input
+      if (isNaN(unitsConsumed)) {
+        alert("Please enter a valid number!");
+        return;
+      }
+
+      // Initialize variables
+      let billAmount = 0;
+      let remainingUnits = unitsConsumed;
+
+      // Apply tax based on each slab
+      for (const slab of taxSlabs) {
+        if (remainingUnits > slab.threshold) {
+          // Calculate tax for units exceeding threshold
+          const taxAmount = (remainingUnits - slab.threshold) * pricePerUnit * slab.taxRate;
+          billAmount += taxAmount;
+          remainingUnits -= remainingUnits - slab.threshold;
+        }
+      }
+
+      // Add base price for remaining units
+      billAmount += remainingUnits * pricePerUnit;
+
+      // Display bill amount
+      document.getElementById("billAmount").innerHTML = `Your bill comes to ${billAmount.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>

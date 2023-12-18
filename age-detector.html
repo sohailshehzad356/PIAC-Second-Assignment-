@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h1>- Create a program that determines the category of a user-provided age. If the age is between 0 and 12, print "Child." If it's between 13 and 19, print "Teenager." Otherwise, print "Adult."</h1>
+    <h1>This program took 20 minutes to build</h1>
+    <script>
+        function getAgeCategory() {
+  // Get user's age from prompt
+  const age = parseInt(prompt("Enter your age: "));
+
+  // Validate input (optional)
+  if (isNaN(age) || age < 0) {
+    console.error("Please enter a valid age.");
+    return;
+  }
+
+  // Determine age category
+  if (age < 13) {
+    console.log("Child");
+  } else if (age <= 19) {
+    console.log("Teenager");
+  } else {
+    console.log("Adult");
+  }
+}
+
+// Call the function
+getAgeCategory();
+
+    </script>
+    
+</body>
+</html>

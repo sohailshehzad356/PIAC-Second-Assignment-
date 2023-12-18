@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>This program take 40 minutes to complete </h1>
+    <h1 style="text-align: center;"> - Write a program that checks if the given number is  divisible by 3 or 5 or both or not divisible by anyone show output accordingly.
+    </h1>
+    
+    <script>
+   const number = parseInt(prompt("Enter a number: "));
+
+if (!Number.isInteger(number) || number <= 0) {
+  console.error("Please enter a valid positive number.");
+} else if (number % 3 === 0 && number % 5 === 0) {
+  console.log(`${number} is divisible by both 3 and 5!`);
+} else if (number % 3 === 0) {
+  console.log(`${number} is divisible by 3!`);
+} else if (number % 5 === 0) {
+  console.log(`${number} is divisible by 5!`);
+} else {
+  console.log(`${number} is not divisible by 3 or 5.`);
+}
+
+
+
+    </script>
+</body>
+</html>

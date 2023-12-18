@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+  <h1>This program took 1hour to build</h1>
+    <h1>Program that converts given number of days in to weeks and days </h1>
+    <script>
+function daysToWeeks() {
+  const days = parseInt(prompt("Enter number of days:"));
+  if (isNaN(days) || days <= 0) {
+    console.error("Please enter a valid number of days.");
+    return;
+  }
+  const weeks = Math.floor(days / 7);
+  const remainingDays = days % 7;
+  console.log(`You have ${weeks} weeks and ${remainingDays} days.`);
+}
+
+daysToWeeks();
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+  <h1>This program took less then a hour to built</h1>
+    <h1 style="text-align: center;">Program that calculates the discount for a product based on its price. If the price is above $100, apply a 10% discount; otherwise, apply a 5% discount</h1>
+    <script>
+ function calculateDiscount(productPrice) {
+  // Check if the price is valid (positive number)
+  if (productPrice <= 0) {
+    console.error("Please enter a price greater than 0.");
+    return;
+  }
+
+  // Calculate the discount rate based on price
+  let discountRate = 0.05;
+  if (productPrice > 100) {
+    discountRate = 0.1;
+  }
+
+  // Calculate discount amount and final price
+  const discountAmount = productPrice * discountRate;
+  const finalPrice = productPrice - discountAmount;
+
+  // Print the results clearly
+  console.log("**Product Price: ", productPrice.toFixed(2));
+  console.log("**Discount Rate:", discountRate * 100, "%"); // convert to percentage
+  console.log("**Discount Amount: ", discountAmount.toFixed(2));
+  console.log("**Final Price: ", finalPrice.toFixed(2));
+}
+
+// Ask the user for the price
+const enteredPrice = parseFloat(prompt("Enter the product price: "));
+
+// Calculate and display the discount
+calculateDiscount(enteredPrice);
+
+
+    </script>
+</body>
+</html>

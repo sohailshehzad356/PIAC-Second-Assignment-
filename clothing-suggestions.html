@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> - Write a program that takes temperature and check it. If it is cold then suggest the user to wear warm clothes and so on according to the weather.
+    </h1>
+    <h1 style="text-align: center;">This program took 30 minutes to Complete</h1>
+    <script>
+function getClothingSuggestion(temperature) {
+  const parsedTemp = parseFloat(prompt("Please enter the temperature (°C): "));
+
+  if (isNaN(parsedTemp)) {
+    console.error("Invalid temperature. Please enter a valid number.");
+    return;
+  }
+
+  let message;
+  if (temperature < 5) {
+    message = "Dress warmly! It's freezing.";
+  } else if (temperature < 10) {
+    message = "Layer up. It's quite chilly.";
+  } else if (temperature < 20) {
+    message = "Light layers and a jacket are advisable.";
+  } else if (temperature < 25) {
+    message = "Enjoy the sunshine! Short sleeves and pants are comfortable.";
+  } else {
+    message = "It's hot! Stay cool in light, breathable clothing.";
+  }
+
+  console.log(message);
+}
+
+getClothingSuggestion();
+
+    </script>
+</body>
+</html>
